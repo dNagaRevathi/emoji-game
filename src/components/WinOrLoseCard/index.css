@@ -1,0 +1,42 @@
+.result-container {
+  background-color: #9796f0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 2px solid #ffffff30;
+}
+.text-result {
+  display: flex;
+  flex-direction: column;
+}
+.heading {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 400;
+  font-family: 'Roboto';
+}
+.para {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: 'Roboto';
+}
+.result-value {
+  color: #6a59ff;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Roboto';
+}
+.button {
+  background-color: #ffce27;
+  color: #3d3d3d;
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: 'Roboto';
+  border: 0px;
+  padding: 8px;
+}
+.win-lose {
+  width: 300px;
+  height: 200px;
+}
