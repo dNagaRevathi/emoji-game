@@ -45,13 +45,13 @@ class EmojiGame extends Component {
       this.setState({topScore: score})
     }
     this.setState({score: 0})
+    this.setState({clickedEmojis: []})
     this.setState({isGameRunning: true})
   }
 
   changeEmoji = id => {
-    const {clickedEmojis} = this.state
+    const {clickedEmojis, score} = this.state
     const checking = clickedEmojis.every(each => each !== id)
-
     if (checking) {
       this.setState(prevState => ({
         clickedEmojis: [...prevState.clickedEmojis, id],
@@ -60,13 +60,20 @@ class EmojiGame extends Component {
     } else {
       this.setState({isGameRunning: false})
     }
+    if (score === 11) {
+      this.setState({isGameRunning: false})
+    }
   }
 
   render() {
     const {score, topScore, isGameRunning} = this.state
     return (
       <div className="app-container">
-        <NavBar score={score} topScore={topScore} />
+        <NavBar
+          score={score}
+          topScore={topScore}
+          isGameRunning={isGameRunning}
+        />
         {isGameRunning ? (
           this.displayEmojis()
         ) : (
